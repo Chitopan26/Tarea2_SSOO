@@ -7,15 +7,15 @@ using namespace std;
 
 int main() {
     // Carpeta que contiene las imágenes de entrada
-    string folderName = "imagenes";
+    string folderName = "Imagenes";
 
     // Pedir al usuario el nombre de la imagen de entrada
-    cout << "Ingrese el nombre de la imagen de entrada (con extension, por ejemplo, imagen.jpg): ";
+    cout << "Ingrese el nombre de la imagen de entrada (con extension): ";
     string inputName;
     cin >> inputName;
 
     // Pedir al usuario el nombre de la imagen de salida
-    cout << "Ingrese el nombre de la imagen de salida (con extension, por ejemplo, salida.png): ";
+    cout << "Ingrese el nombre de la imagen de salida (con extension): ";
     string outputName;
     cin >> outputName;
 
@@ -24,34 +24,34 @@ int main() {
     string outputPath = "imagenesConvertidas/" + outputName;
 
     // Cargar la imagen desde el archivo de entrada
-    Mat img = imread(inputPath);
+    Mat image = imread(inputPath);
 
-    if (img.empty()) {
+    if (image.empty()) {
         cout << "No se pudo cargar la imagen de entrada: " << inputPath << endl;
         return 1;
     }
 
     // Obtener las dimensiones de la imagen
-    int rows = img.rows;
-    int cols = img.cols;
+    int fila = image.rows;
+    int colm = image.cols;
 
     // Convertir la imagen a escala de grises utilizando el método de luminosidad
-    Mat grayImg(rows, cols, CV_8UC1);
+    Mat grayImg(fila, colm, CV_8UC1);
 
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            Vec3b pixel = img.at<Vec3b>(i, j);
+    for (int r = 0; r < fila; r++) {
+        for (int c = 0; c < colm; c++) {
+            Vec3b pixel = image.at<Vec3b>(r, c);
 
             // Calcular la luminosidad
             uchar luminosity = static_cast<uchar>(0.21 * pixel[2] + 0.72 * pixel[1] + 0.07 * pixel[0]);
 
             // Asignar el valor de luminosidad al pixel en la imagen en escala de grises
-            grayImg.at<uchar>(i, j) = luminosity;
+            grayImg.at<uchar>(r, c) = luminosity;
         }
     }
 
     // Mostrar la imagen original y la imagen en escala de grises
-    imshow("Imagen Original", img);
+    imshow("Imagen Original", image);
     imshow("Imagen en Escala de Grises (Luminosidad)", grayImg);
     imwrite(outputPath, grayImg);
     waitKey(0);
