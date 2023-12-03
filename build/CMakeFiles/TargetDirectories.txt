@@ -1,0 +1,3 @@
+C:/Users/rattr/OneDrive/Documentos/GitHub/Tarea2_SSOO/build/CMakeFiles/Sequential.dir
+C:/Users/rattr/OneDrive/Documentos/GitHub/Tarea2_SSOO/build/CMakeFiles/edit_cache.dir
+C:/Users/rattr/OneDrive/Documentos/GitHub/Tarea2_SSOO/build/CMakeFiles/rebuild_cache.dir
