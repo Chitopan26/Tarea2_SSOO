@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/rattr/OneDrive/Documentos/GitHub/Tarea2_SSOO/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\Sequential.dir\\Secuencial\\Secuencial.cpp.obj -c C:\\Users\\rattr\\OneDrive\\Documentos\\GitHub\\Tarea2_SSOO\\Secuencial\\Secuencial.cpp",
-  "file": "C:/Users/rattr/OneDrive/Documentos/GitHub/Tarea2_SSOO/Secuencial/Secuencial.cpp",
-  "output": "CMakeFiles/Sequential.dir/Secuencial/Secuencial.cpp.obj"
-}
-]
